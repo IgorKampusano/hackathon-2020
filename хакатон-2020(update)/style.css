@@ -1,0 +1,159 @@
+html{
+	box-sizing: border-box;
+}
+
+*, *::before, *::after{
+	box-sizing: inherit;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	color: black;
+	font-weight: 700;
+	padding: 50px 50px 20px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.btn {
+	background-color: #fff;
+	border: 3px solid #000000;
+	border-radius: 15px;
+	padding: 0 15px;
+	height: 30px;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.form {
+	width: 400px;
+	height: 580px;
+	padding: 50px 28px 47px 28px;
+	border: 3px solid #000000;
+	border-radius: 15px;
+	margin-right: 15px;
+	margin-bottom: 25px;
+}
+
+.registration {
+	font-size: 24px;
+	line-height: 29px;
+	margin-bottom: 50px;
+}
+
+
+.registration-input {
+	width: 100%;
+	height: 40px;
+	margin-top: 8px;
+	margin-bottom: 14px;
+	border: 2px solid #717171;
+	padding-left: 14px;
+	color: black;
+	font-weight: 700;
+	font-size: 18px;
+}
+
+.registration-input::placeholder,
+.card-input::placeholder,
+.date-input::placeholder,
+.input-cvc::placeholder {
+	font-size: 18px;
+	color: #717171;
+	font-weight: 500;
+}
+
+.card {
+	position: relative;
+	width: 675px;
+	height: 354px;
+	margin: auto 0 auto 100px;
+}
+
+.card-btn {
+	position: absolute;
+	bottom: -55px;
+  left: 50%;
+}
+
+.front-card {
+	border: 3px solid #000000;
+	border-radius: 15px;
+	width: 500px;
+	height: 300px;
+	padding: 50px 40px;
+	background-color: #fff;
+}
+
+.card-input {
+	width: 100%;
+	height: 50px;
+	border: 2px solid #717171;
+	padding-left: 14px;
+}
+
+.card-input + .card-input {
+	margin-top: 20px;
+}
+
+.term {
+	font-size: 14px;
+	margin-top: 19px;
+}
+
+.wrapper {
+	display: flex;
+	align-items: center;
+	margin-top: 17px;
+}
+
+.date-input {
+	color: black;
+	font-weight: 700;
+	font-size: 18px;
+	height: 50px;
+	width: 100px;
+	border: 2px solid #717171;
+	padding-left: 14px;
+}
+
+.dash {
+	color: #717171;
+	font-size: 36px;
+	font-weight: 400;
+	margin: 0 12px;
+}
+
+.card-input {
+	margin-left: auto;
+}
+
+.card-logo {
+	margin-left: 115px;
+}
+
+.back-card {
+	position: absolute;
+	border: 3px solid #000000;
+	border-radius: 15px;
+	width: 500px;
+	height: 300px;
+	top: 54px;
+	left: 175px;
+	z-index: -1;
+}
+
+.line {
+	background-color: #000000;
+	width: 100%;
+	height: 75px;
+	margin-top: 50px;
+}
+
+.input-cvc {
+	width: 100px;
+	height: 50px;
+	border: 2px solid #717171;
+	margin-left: 350px;
+	margin-top: 35px;
+}

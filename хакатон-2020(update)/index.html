@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <form id="user-data" method="POST">
+        <div class="registration">Регистрация / Registration</div>
+        <div class="name">Имя / Name</div>
+        <input class="registration-input" id="name" type="text" placeholder="Иван / Ivan" required>
+        <div class="surname">Фамилия / Surname</div>
+        <input class="registration-input" id="surname" type="text" placeholder="Петров / Petrov" required>
+        <div class="mail">Электронная почта / Email</div>
+        <input class="registration-input" id="mail" type="email" placeholder="ivanpetrov@gmail.com" required>
+        <div class="phone-number">Номер телефона / Phone Number</div>
+        <input class="registration-input" id="phone-number" type="tel" placeholder=" +7 999 999 99 99" required>
+        <!-- <div class="card-number">Номер карты / Card Number</div>
+        <input class="registration-input" id="card-number" type="number" placeholder="1234 5678 9012 3456" required> -->
+        <button class="btn registration-btn" id="submitUserData" type="submit">ДАЛЕЕ</button>
+    </form>
+
+    <div class="card card-none" id = "cardblock" style="visibility: hidden" >
+        <form id="card-data" method="POST">
+            <div class="front-card">
+                <input class="card-input" type="number" placeholder="Номер карты / Card Number" required>
+                <input class="card-input" type="text" placeholder="Владелец карты / Holder of Card" required>
+                <div class="term">СРОК ДЕЙСТВИЯ / VALID THRU</div>
+                <div class="wrapper">
+                    <input class="date-input" type="number" placeholder="MM/MM" required>
+                    <span class="dash">/</span>
+                    <input class="date-input" type="number" placeholder="ГГ/YY" required>
+                    <img class="card-logo" src="images/mastercard.png" alt="mastercard">
+                </div>
+            </div>
+            <div class="back-card">
+                <div class="line"></div>
+                <input class="input-cvc" type="number" placeholder="CVC" required>
+            </div>
+            <button class="btn card-btn" type="submit">ДАЛЕЕ</button>
+        </form>
+    </div>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+      //код для первого submit
+      $('#user-data').submit(function(e){
+    e.preventDefault();
+    $.ajax({
+      url: "form.php",//сюда адрес php файла
+      type: "POST",
+      data: $('#user-data').serialize(),
+      success: function(response) {
+          document.getElementById("cardblock").style.visibility = "visible";
+      },
+      error: function(response) {
+        alert("try again")
+     }
+    });
+});
+// и для 2 submit
+ $('#card-data').submit(function(e){
+  e.preventDefault();
+    $.ajax({
+      url: "form.php",//сюда адрес php файла
+      type: "POST",
+      data: $('#card-data').serialize(),
+      success: function(response) {
+          //здесь мы в дальнейшем напишем сценарий после получения ответа от хоста
+      },
+      error: function(response) {
+        alert("try again")
+     }
+    });
+});
+    </script>
+
+</body>
+
+</html>
