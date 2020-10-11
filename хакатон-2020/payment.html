@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Оплата</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="card card-none" id="cardblock">
+        <form id="card-data" method="POST" action="pay.php">
+            <div class="front-card">
+                <input class="card-input" type="number" placeholder="Номер карты / Card Number" required>
+                <input class="card-input" type="text" placeholder="Владелец карты / Holder of Card" required>
+                <div class="term">СРОК ДЕЙСТВИЯ / VALID THRU</div>
+                <div class="wrapper">
+                    <input class="date-input" type="number" placeholder="MM/MM" required>
+                    <span class="dash">/</span>
+                    <input class="date-input" type="number" placeholder="ГГ/YY" required>
+                    <img class="card-logo" src="mastercard.png" alt="mastercard">
+                </div>
+            </div>
+            <div class="back-card">
+                <div class="line"></div>
+                <input class="input-cvc" type="number" placeholder="CVC" required>
+            </div>
+            <button class="btn card-btn" type="submit">ДАЛЕЕ</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
